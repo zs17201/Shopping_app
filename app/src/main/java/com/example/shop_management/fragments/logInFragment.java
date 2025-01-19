@@ -88,7 +88,9 @@ public class logInFragment extends Fragment {
                         mainActivity.getName(new MainActivity.OnGetNameListener() {
                             @Override
                             public void onNameReceived(String userName) {
-                                CurrentUser curr_user = CurrentUser.getInstance(email,userName);
+                                CurrentUser curr_user = CurrentUser.getInstance("","");
+                                curr_user.setName(userName);
+                                curr_user.setEmail(email);
                                 CartManager cartManager = CartManager.getInstance();
                                 cartManager.uploadCart();
                                 Navigation.findNavController(view).navigate(R.id.action_logInFragment_to_shoppingFragment);

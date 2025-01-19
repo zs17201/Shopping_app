@@ -18,10 +18,6 @@ public class CurrentUser {
         }
         return curr_user;
     }
-    public static void setInstance(String email, String name) {
-        curr_user = new CurrentUser(email, name);
-    }
-
 
     public String getEmail() {
         return email;
